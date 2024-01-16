@@ -2,7 +2,7 @@
 import { SearchOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Button, Input, Select, Space } from 'antd';
-import { BD } from 'country-flag-icons/react/3x2'
+import { BD, US } from 'country-flag-icons/react/3x2'
 
 const { Option } = Select;
 
@@ -10,6 +10,10 @@ const countries = [
   {
     code: '+880',
     flag: <BD title="Bangladesh" />,
+  },
+  {
+    code: '+1',
+    flag: <US title="USA" />,
   },
 ];
 
