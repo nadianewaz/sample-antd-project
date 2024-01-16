@@ -2,17 +2,14 @@
 import { SearchOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Button, Input, Select, Space } from 'antd';
+import { BD } from 'country-flag-icons/react/3x2'
 
-const { Search } = Input;
+const { Option } = Select;
 
-const options = [
+const countries = [
   {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
+    code: '+880',
+    flag: <BD title="Bangladesh" />,
   },
 ];
 
@@ -20,8 +17,21 @@ export default function Home() {
   return (
     <Space direction="vertical" size="middle">
       <Space.Compact>
-        <Select defaultValue="Zhejiang" options={options} />
-        <Input defaultValue="Xihu District, Hangzhou" />
+        <Select defaultValue={countries[0]} popupMatchSelectWidth={false} >
+        {countries.map((country) => (
+        <Option
+          key={country.code}
+          value={country.code}
+          // Give label value for Select here
+          label={country.code}
+        >
+          <span><span>{country.flag}</span> <span>{country.code}</span></span>
+            
+            
+        </Option>
+      ))}
+    </Select>
+        <Input />
       </Space.Compact>
     </Space>
   )
